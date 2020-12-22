@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.PrintWriter;
-import com.sun.glass.ui.Size;
 
 public class Spreadsheet implements Grid {
 	@Override
@@ -63,7 +62,7 @@ public class Spreadsheet implements Grid {
 				com = command.split(" = ");
 				SpreadsheetLocation loc = new SpreadsheetLocation(com[0]);
 				String f = command.substring(com[0].length() + 3, command.length());
-				System.out.println(f);
+				
 				if (com[1].charAt(0) == '"') {
 					sheet[loc.getRow()][loc.getCol()] = new TextCell(f);
 				} else if (command.charAt(command.length() - 1) == '%') {
